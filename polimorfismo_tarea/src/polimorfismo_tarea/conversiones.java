@@ -6,10 +6,10 @@ public class conversiones {
         double anguloEnGrados = 45;
 
         double anguloEnRadianes = Math.toRadians(anguloEnGrados);
-        System.out.println("De grados a Radianes" + anguloEnGrados + "° = " + anguloEnRadianes + "rad");
+        System.out.println("grados a radianes" + anguloEnGrados + "° = " + anguloEnRadianes + "radianes");
 
         anguloEnGrados = Math.toRadians(anguloEnRadianes);
-        System.out.println("Radianes a Grados" + anguloEnRadianes + "rad = " + anguloEnGrados + "°");
+        System.out.println(" radianes a grados" + anguloEnRadianes + "radiaciones = " + anguloEnGrados + "°");
 
     }
 

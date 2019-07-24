@@ -10,15 +10,15 @@ public class Polimorfismo_tarea {
 
         //Coseno
         resultado = Math.cos(angulosenRadianes);
-        System.out.println("Coseno de " + anguloenGrados + "° = " + resultado);
+        System.out.println("coseno" + anguloenGrados + "° = " + resultado);
 
         //Seno
         resultado = Math.sin(angulosenRadianes);
-        System.out.println("Seno de " + anguloenGrados + "° = " + resultado);
+        System.out.println("seno" + anguloenGrados + "° = " + resultado);
 
         //Tangente
         resultado = Math.tan(angulosenRadianes);
-        System.out.println("Tangente de " + anguloenGrados + "° = " + resultado);
+        System.out.println("tangente" + anguloenGrados + "° = " + resultado);
 
     }
 
