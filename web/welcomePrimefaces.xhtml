@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    //Header
+<h:form>
+    <p:growl id="messages" showDetail="true"/>
+ 
+    <p:slideMenu style="width:200px">
+        <p:submenu label="Ajax Menuitems" icon="pi pi-refresh">
+            <p:menuitem value="Save" action="#{menuView.save}" update="messages" icon="pi pi-save" />
+            <p:menuitem value="Update" action="#{menuView.update}" update="messages" icon="pi pi-refresh" />
+        </p:submenu>
+        <p:submenu label="Non-Ajax Menuitem" icon="pi pi-clone">
+            <p:menuitem value="Delete" action="#{menuView.delete}"  ajax="false" icon="pi pi-times"/>
+        </p:submenu>
+        <p:separator />
+        <p:submenu label="Navigations" icon="pi pi-home">
+            <p:submenu label="Prime Links">
+                <p:menuitem value="Prime" url="http://www.prime.com.tr" />
+                <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
+            </p:submenu>
+            <p:menuitem value="Mobile" />
+        </p:submenu>
+    </p:slideMenu>
+     
+    <p:separator />
+ 
+    <p:commandButton id="dynaButton" value="Show" type="button" icon="pi pi-home"/>
+    <p:slideMenu overlay="true" trigger="dynaButton" my="left top" at="left bottom" style="width:180px">
+        <p:submenu label="Ajax Menuitems">
+            <p:menuitem value="Save" action="#{menuView.save}" update="messages" icon="pi pi-save"/>
+            <p:menuitem value="Update" action="#{menuView.update}" update="messages" icon="pi pi-refresh"/>
+        </p:submenu>
+        <p:submenu label="Non-Ajax Menuitem">
+            <p:menuitem value="Delete" action="#{menuView.delete}"  ajax="false" icon="pi pi-times"/>
+        </p:submenu>
+        <p:submenu label="Navigations" icon="pi pi-home">
+            <p:submenu label="Prime Links">
+                <p:menuitem value="Prime" url="http://www.prime.com.tr" />
+                <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
+            </p:submenu>
+            <p:menuitem value="Mobile" />
+        </p:submenu>
+    </p:slideMenu>
+</h:form>
+                    
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Menuuu" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <p:inputText maxlength="3">Ingrese un numero</p:inputText>
+                    <p:inputNumber minValue="-1000.999" maxValue="1000"></p:inputNumber>
+                       
+                    <p:growl id="messages" showDetail="true" />
+
+                    Single file<br />
+                    <h:form enctype="multipart/form-data">        
+                        <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
+                        <br />
+                        <p:commandButton value="Submit" ajax="false" action="#{fileUploadView.upload}" disabled="true" />
+                    </h:form>
+
+                    <br />
+                    <br />
+                    Multiple files; NOTE: in simple mode, you can get all files withing a single request!<br />
+                    <h:form enctype="multipart/form-data">
+                        <p:fileUpload value="#{fileUploadView.files}" mode="simple" skinSimple="true" multiple="true" />
+                        <br />
+                        <p:commandButton value="Submit" ajax="false" action="#{fileUploadView.uploadMultiple}" disabled="true" />
+                    </h:form>
+                    
+                    //
+                    
+                    <h:form>  
+                        <p:growl id="messages"/>
+
+                        <p:menubar>
+                            <p:submenu label="File" icon="pi pi-file">
+                                <p:submenu label="New" icon="pi pi-briefcase">
+                                    <p:menuitem value="Project" url="#" />
+                                    <p:menuitem value="Other" url="#" />
+                                </p:submenu>
+                                <p:menuitem value="Open" url="#" />
+                                <p:separator />
+                                <p:menuitem value="Quit" url="#" />
+                            </p:submenu>
+
+                            <p:submenu label="Edit" icon="pi pi-pencil">
+                                <p:menuitem value="Undo" url="#" icon="pi pi-angle-double-left" />
+                                <p:menuitem value="Redo" url="#" icon="pi pi-angle-double-right" />
+                            </p:submenu>
+
+                            <p:submenu label="Help" icon="pi pi-question">
+                                <p:menuitem value="Contents" url="#" />
+                                <p:submenu label="Search" icon="pi pi-search">
+                                    <p:submenu label="Text">
+                                        <p:menuitem value="Workspace" url="#" />
+                                    </p:submenu>
+                                    <p:menuitem value="File" url="#" />
+                                </p:submenu>
+                            </p:submenu>
+
+                            <p:submenu label="Actions" icon="pi pi-cog">
+                                <p:submenu label="Ajax" icon="pi pi-refresh">
+                                    <p:menuitem value="Save" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
+                                    <p:menuitem value="Update" action="#{menuView.update}" icon="pi pi-refresh" update="messages"/>
+                                </p:submenu>
+                                <p:submenu label="Non-Ajax" icon="pi pi-clone">
+                                    <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
+                                </p:submenu>
+                            </p:submenu>
+
+                            <p:menuitem value="Quit" url="http://www.primefaces.org" icon="pi pi-times" />
+
+                            <f:facet name="options">
+                                <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+                                <p:commandButton type="button" value="Logout" icon="pi pi-home" />
+                            </f:facet>
+                        </p:menubar>
+                    </h:form>
+                    
+                    //
+                    
+                    
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
