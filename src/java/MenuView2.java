@@ -1,4 +1,3 @@
-
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.RequestScoped;
@@ -11,7 +10,7 @@ import org.primefaces.model.menu.MenuModel;
 
 @Named
 @RequestScoped
-public class MenuView {
+public class MenuView2 {
  
     private MenuModel model;
  

@@ -11,7 +11,7 @@ import org.primefaces.model.menu.MenuModel;
 
 @Named
 @RequestScoped
-public class MenuView {
+public class MenuView3 {
  
     private MenuModel model;
  
